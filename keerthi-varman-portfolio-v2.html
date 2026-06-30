@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keerthi Varman | Test Automation Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="gbg">
+
+<!-- LOADER -->
+<div id="loader">
+  <div style="font-family:'Orbitron',sans-serif;font-size:1.3rem;color:var(--nb);letter-spacing:.2em;">KV<span style="color:var(--np);">_</span></div>
+  <div class="lbw"><div class="lb"></div></div>
+  <div class="ltxt">INITIALIZING PORTFOLIO…</div>
+</div>
+
+<!-- CURSOR -->
+<div id="cdot"></div><div id="cring"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between" style="height:56px;">
+    <a href="#hero" style="font-family:'Orbitron',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.12em;color:var(--nb);text-decoration:none;">KV<span style="color:var(--np);">.QA</span></a>
+    <div class="dnav flex items-center gap-8">
+      <a href="#about" class="nl">About</a>
+      <a href="#skills" class="nl">Arsenal</a>
+      <a href="#education" class="nl">Education</a>
+      <a href="#interests" class="nl">Interests</a>
+      <a href="#contact" class="nl">Contact</a>
+    </div>
+    <button class="hbtn" onclick="toggleMenu()" style="display:none;cursor:pointer;background:none;border:none;color:var(--nb);font-size:1.4rem;">☰</button>
+  </div>
+  <div class="mmenu" id="mmenu">
+    <a href="#about" class="nl" onclick="toggleMenu()">About</a>
+    <a href="#skills" class="nl" onclick="toggleMenu()">Arsenal</a>
+    <a href="#education" class="nl" onclick="toggleMenu()">Education</a>
+    <a href="#interests" class="nl" onclick="toggleMenu()">Interests</a>
+    <a href="#contact" class="nl" onclick="toggleMenu()">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" style="min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;">
+  <div class="scan"></div>
+  <div id="parts" style="position:absolute;inset:0;overflow:hidden;pointer-events:none;"></div>
+  <div class="oring" style="width:520px;height:520px;right:-160px;top:50%;margin-top:-260px;animation-duration:42s;border-color:rgba(0,212,255,.09);"></div>
+  <div class="oring" style="width:360px;height:360px;right:-80px;top:50%;margin-top:-180px;animation-duration:28s;border-color:rgba(168,85,247,.09);"></div>
+  <div class="oring" style="width:200px;height:200px;right:0;top:50%;margin-top:-100px;animation-duration:18s;border-color:rgba(0,212,255,.12);"></div>
+
+  <div class="max-w-7xl mx-auto px-6 pt-28 pb-20 w-full relative z-10">
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:4rem;">
+      <!-- LEFT -->
+      <div style="flex:1;min-width:280px;">
+        <div class="badge" style="margin-bottom:1.5rem;"><span class="bdot"></span>AVAILABLE FOR WORK</div>
+        <h1 class="gt" data-text="KEERTHI VARMAN" style="font-family:'Orbitron',sans-serif;font-weight:900;line-height:1.05;margin-bottom:1rem;font-size:clamp(2rem,5.5vw,4rem);color:#fff;display:block;">KEERTHI VARMAN</h1>
+        <div style="height:2px;width:100%;background:linear-gradient(90deg,var(--nb),var(--np),transparent);box-shadow:0 0 15px var(--nb);margin-bottom:1rem;"></div>
+        <h2 style="font-family:'Orbitron',sans-serif;font-weight:600;margin-bottom:1.5rem;font-size:clamp(.9rem,2.5vw,1.4rem);color:var(--nb);letter-spacing:.15em;">AUTOMATION TEST ENGINEER</h2>
+        <p style="font-size:1.1rem;margin-bottom:2rem;line-height:1.7;color:rgba(224,224,255,.6);max-width:520px;font-weight:300;">
+          <span id="tt"></span><span class="tcur"></span>
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2.5rem;">
+          <a href="#contact" class="bbl">Contact Me</a>
+          <a href="#" onclick="showToast('Resume download initiated…');return false;" class="bbp">Download Resume</a>
+        </div>
+      </div>
+      <!-- RIGHT HUD -->
+      <div style="flex-shrink:0;position:relative;width:270px;height:270px;">
+        <div style="width:100%;height:100%;border-radius:50%;background:radial-gradient(circle,rgba(0,212,255,.07) 0%,transparent 70%);border:1px solid rgba(0,212,255,.2);display:flex;align-items:center;justify-content:center;position:relative;">
+          <div style="width:190px;height:190px;border-radius:50%;background:rgba(13,13,32,.9);border:2px solid rgba(0,212,255,.25);display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;">
+            <span style="font-family:'Orbitron',sans-serif;font-weight:900;font-size:3.5rem;color:var(--nb);opacity:.17;user-select:none;">KV</span>
+            <div style="position:absolute;inset:0;background:conic-gradient(from 0deg,transparent 80%,rgba(0,212,255,.18) 90%,transparent 100%);animation:ospin 4s linear infinite;"></div>
+          </div>
+          <div style="font-family:'Share Tech Mono',monospace;font-size:.58rem;position:absolute;top:18px;right:14px;color:rgba(0,212,255,.4);letter-spacing:.1em;">SYS:ONLINE</div>
+          <div style="font-family:'Share Tech Mono',monospace;font-size:.58rem;position:absolute;bottom:22px;left:16px;color:rgba(168,85,247,.4);letter-spacing:.1em;">QA:ACTIVE</div>
+          <div style="position:absolute;top:24px;left:24px;width:16px;height:16px;border-top:2px solid var(--nb);border-left:2px solid var(--nb);"></div>
+          <div style="position:absolute;bottom:24px;right:24px;width:16px;height:16px;border-bottom:2px solid var(--np);border-right:2px solid var(--np);"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Scroll cue -->
+    <div style="position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;animation:bounce 2s ease-in-out infinite;">
+      <div style="font-family:'Share Tech Mono',monospace;font-size:.6rem;color:rgba(0,212,255,.3);letter-spacing:.2em;">SCROLL</div>
+      <div style="width:1px;height:36px;background:linear-gradient(180deg,var(--nb),transparent);"></div>
+    </div>
+  </div>
+  <style>@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-8px)}}</style>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="padding:7rem 0;position:relative;">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="rv" style="margin-bottom:4rem;padding-left:3rem;">
+      <div class="stitle" data-n="01" style="font-size:1.8rem;font-weight:900;color:#fff;">ABOUT <span style="color:var(--nb);">ME</span></div>
+      <div class="tbar"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:3rem;align-items:start;">
+      <div class="rv gc cdeco" style="padding:2rem;">
+        <p style="font-size:1.15rem;font-weight:600;color:rgba(224,224,255,.9);line-height:1.6;margin-bottom:.75rem;">Manual Testing Engineer with a sharp eye for defects and a passion for software quality.</p>
+        <p style="color:rgba(224,224,255,.5);font-weight:300;line-height:1.7;">Bridging development and reliable software through rigorous testing, analytical thinking, and deep SDLC & STLC expertise.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem;">
+          <span style="font-family:'Share Tech Mono',monospace;font-size:.7rem;padding:.25rem .75rem;border:1px solid rgba(0,212,255,.2);color:rgba(0,212,255,.6);">#Agile</span>
+          <span style="font-family:'Share Tech Mono',monospace;font-size:.7rem;padding:.25rem .75rem;border:1px solid rgba(168,85,247,.2);color:rgba(168,85,247,.6);">#Scrum</span>
+          <span style="font-family:'Share Tech Mono',monospace;font-size:.7rem;padding:.25rem .75rem;border:1px solid rgba(0,212,255,.2);color:rgba(0,212,255,.6);">#JIRA</span>
+          <span style="font-family:'Share Tech Mono',monospace;font-size:.7rem;padding:.25rem .75rem;border:1px solid rgba(168,85,247,.2);color:rgba(168,85,247,.6);">#QA</span>
+        </div>
+      </div>
+      <div class="rv" style="transition-delay:.2s;">
+        <div class="ai"><div class="adot" style="background:var(--nb);box-shadow:0 0 8px var(--nb);"></div><p style="color:rgba(224,224,255,.75);">Manual Testing Engineer with strong knowledge of <span style="color:var(--nb);">Software Testing, SDLC,</span> and <span style="color:var(--nb);">STLC</span>.</p></div>
+        <div class="ai"><div class="adot" style="background:var(--np);box-shadow:0 0 8px var(--np);"></div><p style="color:rgba(224,224,255,.75);">Skilled in <span style="color:var(--np);">requirement analysis, test case design,</span> and test execution for web applications.</p></div>
+        <div class="ai"><div class="adot" style="background:var(--nb);box-shadow:0 0 8px var(--nb);"></div><p style="color:rgba(224,224,255,.75);">Experienced in <span style="color:var(--nb);">Functional, Regression,</span> and <span style="color:var(--nb);">Integration Testing</span> to ensure software quality.</p></div>
+        <div class="ai"><div class="adot" style="background:var(--np);box-shadow:0 0 8px var(--np);"></div><p style="color:rgba(224,224,255,.75);">Familiar with <span style="color:var(--np);">defect tracking and bug reporting</span> using Jira in Agile/Scrum environments.</p></div>
+        <div class="ai"><div class="adot" style="background:var(--nb);box-shadow:0 0 8px var(--nb);"></div><p style="color:rgba(224,224,255,.75);">Strong <span style="color:var(--nb);">analytical skills</span> focused on identifying defects and improving application reliability.</p></div>
+        <div class="ai"><div class="adot" style="background:var(--np);box-shadow:0 0 8px var(--np);"></div><p style="color:rgba(224,224,255,.75);">Transitioning to <span style="color:var(--np);">Automation Test Engineer</span> with expertise in <span style="color:var(--np);">test automation frameworks</span> and <span style="color:var(--np);">continuous integration.</span></p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" style="padding:7rem 0;position:relative;">
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(0,212,255,.025),transparent);pointer-events:none;"></div>
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="rv" style="margin-bottom:4rem;padding-left:3rem;">
+      <div class="stitle" data-n="02" style="font-size:1.8rem;font-weight:900;color:#fff;">TECHNICAL <span style="color:var(--np);">ARSENAL</span></div>
+      <div class="tbar" style="background:linear-gradient(90deg,var(--np),var(--nb));box-shadow:0 0 10px var(--np);"></div>
+    </div>
+    <div class="rv" style="display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:3.5rem;justify-content:center;">
+      <div class="stag" style="border-color:rgba(0,212,255,.4);color:var(--nb);background:rgba(0,212,255,.05);">MANUAL TESTING</div>
+      <div class="stag" style="border-color:rgba(168,85,247,.4);color:var(--np);background:rgba(168,85,247,.05);">SQL</div>
+      <div class="stag" style="border-color:rgba(0,212,255,.4);color:var(--nb);background:rgba(0,212,255,.05);">CORE JAVA</div>
+      <div class="stag" style="border-color:rgba(168,85,247,.4);color:var(--np);background:rgba(168,85,247,.05);">HTML</div>
+      <div class="stag" style="border-color:rgba(0,212,255,.4);color:var(--nb);background:rgba(0,212,255,.05);">JAVA SELENIUM</div>
+    </div>
+    <div class="rv" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2.5rem;">
+      <div style="display:flex;flex-direction:column;gap:2rem;">
+        <div><div style="display:flex;justify-content:space-between;margin-bottom:.5rem;"><span style="font-family:'Orbitron',sans-serif;font-size:.72rem;color:rgba(224,224,255,.8);">MANUAL TESTING</span><span style="font-family:'Share Tech Mono',monospace;font-size:.7rem;color:var(--nb);">90%</span></div><div class="sbw"><div class="sbf" style="width:90%"></div></div></div>
+        <div><div style="display:flex;justify-content:space-between;margin-bottom:.5rem;"><span style="font-family:'Orbitron',sans-serif;font-size:.72rem;color:rgba(224,224,255,.8);">SQL</span><span style="font-family:'Share Tech Mono',monospace;font-size:.7rem;color:var(--np);">80%</span></div><div class="sbw"><div class="sbf" style="width:80%"></div></div></div>
+        <div><div style="display:flex;justify-content:space-between;margin-bottom:.5rem;"><span style="font-family:'Orbitron',sans-serif;font-size:.72rem;color:rgba(224,224,255,.8);">HTML</span><span style="font-family:'Share Tech Mono',monospace;font-size:.7rem;color:var(--nb);">75%</span></div><div class="sbw"><div class="sbf" style="width:75%"></div></div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2rem;">
+        <div><div style="display:flex;justify-content:space-between;margin-bottom:.5rem;"><span style="font-family:'Orbitron',sans-serif;font-size:.72rem;color:rgba(224,224,255,.8);">CORE JAVA</span><span style="font-family:'Share Tech Mono',monospace;font-size:.7rem;color:var(--np);">70%</span></div><div class="sbw"><div class="sbf" style="width:70%"></div></div></div>
+        <div><div style="display:flex;justify-content:space-between;margin-bottom:.5rem;"><span style="font-family:'Orbitron',sans-serif;font-size:.72rem;color:rgba(224,224,255,.8);">JAVA SELENIUM</span><span style="font-family:'Share Tech Mono',monospace;font-size:.7rem;color:var(--nb);">65%</span></div><div class="sbw"><div class="sbf" style="width:65%"></div></div></div>
+        <div><div style="display:flex;justify-content:space-between;margin-bottom:.5rem;"><span style="font-family:'Orbitron',sans-serif;font-size:.72rem;color:rgba(224,224,255,.8);">JIRA / AGILE</span><span style="font-family:'Share Tech Mono',monospace;font-size:.7rem;color:var(--np);">85%</span></div><div class="sbw"><div class="sbf" style="width:85%"></div></div></div>
+      </div>
+    </div>
+    <div class="rv gc cdeco" style="padding:1.5rem;max-width:640px;margin:3rem auto 0;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--nb),var(--np));box-shadow:0 0 10px var(--nb);"></div>
+      <div style="font-family:'Share Tech Mono',monospace;font-size:.7rem;color:var(--nb);letter-spacing:.15em;margin-bottom:.75rem;">&gt; DB_VALIDATION_EXPERTISE</div>
+      <p style="color:rgba(224,224,255,.6);">Proficient in writing <span style="color:var(--nb);">SQL queries</span> for database validation — including data integrity checks, JOIN operations, subqueries, and stored procedure testing to ensure backend accuracy aligns with front-end behavior.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" style="padding:7rem 0;">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="rv" style="margin-bottom:4rem;padding-left:3rem;">
+      <div class="stitle" data-n="03" style="font-size:1.8rem;font-weight:900;color:#fff;">EDUCATION &amp; <span style="color:var(--nb);">CERTIFICATIONS</span></div>
+      <div class="tbar"></div>
+    </div>
+    <div style="max-width:680px;margin:0 auto;position:relative;padding-left:3rem;">
+      <div class="tl-line"></div>
+      <!-- Cert -->
+      <div class="rv" style="margin-bottom:3.5rem;position:relative;">
+        <div class="tl-node"></div>
+        <div class="gc cdeco" style="padding:1.75rem;margin-left:2rem;">
+          <div style="font-family:'Share Tech Mono',monospace;font-size:.68rem;color:var(--nb);letter-spacing:.15em;margin-bottom:.6rem;">CERTIFICATION</div>
+          <h3 style="font-family:'Orbitron',sans-serif;font-weight:700;font-size:1.2rem;color:#fff;margin-bottom:.3rem;">Automation Test Engineer</h3>
+          <p style="color:var(--np);margin-bottom:.75rem;">QSPIDERS, Chromepet</p>
+          <p style="color:rgba(224,224,255,.5);line-height:1.6;">Comprehensive course covering automation testing frameworks, Selenium WebDriver, Core Java, and software quality assurance methodologies.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;">
+            <span style="font-family:'Share Tech Mono',monospace;font-size:.68rem;padding:.2rem .7rem;border:1px solid rgba(0,212,255,.2);color:rgba(0,212,255,.55);">Selenium</span>
+            <span style="font-family:'Share Tech Mono',monospace;font-size:.68rem;padding:.2rem .7rem;border:1px solid rgba(168,85,247,.2);color:rgba(168,85,247,.55);">Java</span>
+            <span style="font-family:'Share Tech Mono',monospace;font-size:.68rem;padding:.2rem .7rem;border:1px solid rgba(0,212,255,.2);color:rgba(0,212,255,.55);">TestNG</span>
+            <span style="font-family:'Share Tech Mono',monospace;font-size:.68rem;padding:.2rem .7rem;border:1px solid rgba(168,85,247,.2);color:rgba(168,85,247,.55);">QA Methods</span>
+          </div>
+        </div>
+      </div>
+      <!-- Degree -->
+      <div class="rv" style="position:relative;transition-delay:.2s;">
+        <div class="tl-node" style="border-color:var(--np);box-shadow:0 0 12px var(--np);animation:pnp 2s ease-in-out infinite;"></div>
+        <style>@keyframes pnp{0%,100%{box-shadow:0 0 8px var(--np)}50%{box-shadow:0 0 20px var(--np),0 0 35px rgba(168,85,247,.3)}}</style>
+        <div class="gc cdeco" style="padding:1.75rem;margin-left:2rem;border-color:rgba(168,85,247,.15);">
+          <div style="font-family:'Share Tech Mono',monospace;font-size:.68rem;color:var(--np);letter-spacing:.15em;margin-bottom:.6rem;">DEGREE</div>
+          <h3 style="font-family:'Orbitron',sans-serif;font-weight:700;font-size:1.2rem;color:#fff;margin-bottom:.3rem;">B.Sc Computer Science</h3>
+          <p style="color:var(--nb);margin-bottom:.25rem;">S.I.V.E.T College — University of Madras</p>
+          <p style="font-family:'Share Tech Mono',monospace;font-size:.7rem;color:rgba(224,224,255,.3);margin-bottom:1rem;">June 2019 — May 2022</p>
+          <div style="display:flex;align-items:center;gap:1.5rem;">
+            <div style="text-align:center;">
+              <div style="font-family:'Orbitron',sans-serif;font-weight:700;font-size:2.5rem;color:var(--np);">8.5</div>
+              <div style="font-family:'Share Tech Mono',monospace;font-size:.62rem;color:rgba(224,224,255,.3);margin-top:.2rem;">CGPA</div>
+            </div>
+            <div style="width:1px;height:44px;background:rgba(255,255,255,.1);flex-shrink:0;"></div>
+            <p style="color:rgba(224,224,255,.5);font-size:.9rem;line-height:1.6;">Graduated with distinction. Core subjects: Data Structures, DBMS, Software Engineering & Computer Networks.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERESTS -->
+<section id="interests" style="padding:7rem 0;position:relative;">
+  <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent,rgba(168,85,247,.025),transparent);pointer-events:none;"></div>
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="rv" style="margin-bottom:4rem;padding-left:3rem;">
+      <div class="stitle" data-n="04" style="font-size:1.8rem;font-weight:900;color:#fff;">INTERESTS &amp; <span style="color:var(--np);">HOBBIES</span></div>
+      <div class="tbar" style="background:linear-gradient(90deg,var(--np),var(--nb));box-shadow:0 0 10px var(--np);"></div>
+    </div>
+    <div class="rv" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1rem;">
+      <div class="ic" style="padding:1.25rem;"><div class="ii">💻</div><div style="font-family:'Orbitron',sans-serif;font-size:.58rem;color:rgba(224,224,255,.65);letter-spacing:.08em;text-align:center;">VIBE CODING</div></div>
+      <div class="ic" style="padding:1.25rem;"><div class="ii">🏏</div><div style="font-family:'Orbitron',sans-serif;font-size:.58rem;color:rgba(224,224,255,.65);letter-spacing:.08em;text-align:center;">CRICKET</div></div>
+      <div class="ic" style="padding:1.25rem;"><div class="ii">⚽</div><div style="font-family:'Orbitron',sans-serif;font-size:.58rem;color:rgba(224,224,255,.65);letter-spacing:.08em;text-align:center;">FOOTBALL</div></div>
+      <div class="ic" style="padding:1.25rem;"><div class="ii">🏸</div><div style="font-family:'Orbitron',sans-serif;font-size:.58rem;color:rgba(224,224,255,.65);letter-spacing:.08em;text-align:center;">BADMINTON</div></div>
+      <div class="ic" style="padding:1.25rem;"><div class="ii">♟️</div><div style="font-family:'Orbitron',sans-serif;font-size:.58rem;color:rgba(224,224,255,.65);letter-spacing:.08em;text-align:center;">CHESS</div></div>
+      <div class="ic" style="padding:1.25rem;"><div class="ii">🏊</div><div style="font-family:'Orbitron',sans-serif;font-size:.58rem;color:rgba(224,224,255,.65);letter-spacing:.08em;text-align:center;">SWIMMING</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="padding:7rem 0;position:relative;">
+  <div style="position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--nb),var(--np),transparent);"></div>
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="rv" style="margin-bottom:4rem;padding-left:3rem;">
+      <div class="stitle" data-n="05" style="font-size:1.8rem;font-weight:900;color:#fff;">CONTACT <span style="color:var(--nb);">MATRIX</span></div>
+      <div class="tbar"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:3rem;">
+      <!-- Info -->
+      <div class="rv" style="display:flex;flex-direction:column;gap:1rem;">
+        <p style="font-size:1.1rem;font-weight:300;color:rgba(224,224,255,.45);margin-bottom:1.5rem;max-width:380px;">Ready to collaborate? Transmit your signal — response guaranteed within 24 hours.</p>
+        <div class="cii">
+          <div style="width:42px;height:42px;border:1px solid rgba(0,212,255,.3);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;">📞</div>
+          <div><div style="font-family:'Share Tech Mono',monospace;font-size:.65rem;color:rgba(0,212,255,.4);letter-spacing:.15em;margin-bottom:.3rem;">PHONE</div><a href="tel:+917339138144" style="color:rgba(224,224,255,.8);font-size:1rem;font-weight:600;text-decoration:none;">+91 73391 38144</a></div>
+        </div>
+        <div class="cii">
+          <div style="width:42px;height:42px;border:1px solid rgba(168,85,247,.3);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;">✉️</div>
+          <div><div style="font-family:'Share Tech Mono',monospace;font-size:.65rem;color:rgba(168,85,247,.4);letter-spacing:.15em;margin-bottom:.3rem;">EMAIL</div><a href="mailto:Keerthivarman780@gmail.com" style="color:rgba(224,224,255,.8);font-size:1rem;font-weight:600;text-decoration:none;word-break:break-all;">Keerthivarman780@gmail.com</a></div>
+        </div>
+        <div class="cii">
+          <div style="width:42px;height:42px;border:1px solid rgba(0,212,255,.3);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;">📍</div>
+          <div><div style="font-family:'Share Tech Mono',monospace;font-size:.65rem;color:rgba(0,212,255,.4);letter-spacing:.15em;margin-bottom:.3rem;">BASE OF OPERATIONS</div><p style="color:rgba(224,224,255,.8);font-size:1rem;font-weight:600;">Madambakkam, Chennai</p></div>
+        </div>
+      </div>
+      <!-- Form -->
+      <div class="rv gc cdeco" style="padding:2rem;position:relative;overflow:hidden;transition-delay:.2s;">
+        <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--nb),var(--np));box-shadow:0 0 10px var(--nb);"></div>
+        <div style="font-family:'Share Tech Mono',monospace;font-size:.7rem;color:var(--nb);letter-spacing:.15em;margin-bottom:1.5rem;">&gt; SEND_MESSAGE.init()</div>
+        <div style="display:flex;flex-direction:column;gap:1.25rem;">
+          <div>
+            <label style="font-family:'Orbitron',sans-serif;font-size:.62rem;color:rgba(224,224,255,.35);letter-spacing:.15em;display:block;margin-bottom:.5rem;">YOUR NAME</label>
+            <input id="cfn" type="text" class="cinput" placeholder="John Doe" />
+          </div>
+          <div>
+            <label style="font-family:'Orbitron',sans-serif;font-size:.62rem;color:rgba(224,224,255,.35);letter-spacing:.15em;display:block;margin-bottom:.5rem;">EMAIL ADDRESS</label>
+            <input id="cfe" type="email" class="cinput" placeholder="john@example.com" />
+          </div>
+          <div>
+            <label style="font-family:'Orbitron',sans-serif;font-size:.62rem;color:rgba(224,224,255,.35);letter-spacing:.15em;display:block;margin-bottom:.5rem;">MESSAGE</label>
+            <textarea id="cfm" rows="5" class="cinput" style="resize:none;" placeholder="Your message here…"></textarea>
+          </div>
+          <button onclick="sendMsg()" class="bbl" style="width:100%;text-align:center;">TRANSMIT MESSAGE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="padding:2rem 0;">
+  <div class="fline" style="margin-bottom:2rem;"></div>
+  <div class="max-w-7xl mx-auto px-6" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;">
+    <div style="font-family:'Orbitron',sans-serif;font-size:.85rem;font-weight:700;color:var(--nb);">KV<span style="color:var(--np);">.QA</span></div>
+    <p style="font-family:'Share Tech Mono',monospace;font-size:.65rem;color:rgba(224,224,255,.2);letter-spacing:.1em;text-align:center;">© 2025 KEERTHI VARMAN — ALL SYSTEMS OPERATIONAL</p>
+    <div style="font-family:'Share Tech Mono',monospace;font-size:.65rem;color:rgba(0,212,255,.3);">BUILD_v1.0.0</div>
+  </div>
+</footer>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
