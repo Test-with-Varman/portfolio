@@ -1,59 +1,192 @@
-// LOADER
-window.addEventListener('load',()=>{setTimeout(()=>{document.getElementById('loader').classList.add('done');boot();},2200);});
+function showToast(message) {
+  const toast = document.getElementById('toast');
+  if (!toast) return;
 
-// CURSOR
-const cdot=document.getElementById('cdot'),cring=document.getElementById('cring');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
-(function tick(){cdot.style.left=mx+'px';cdot.style.top=my+'px';rx+=(mx-rx)*.12;ry+=(my-ry)*.12;cring.style.left=rx+'px';cring.style.top=ry+'px';requestAnimationFrame(tick);})();
-document.querySelectorAll('a,button').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cring.style.width='54px';cring.style.height='54px';cring.style.borderColor='rgba(168,85,247,.6)';});
-  el.addEventListener('mouseleave',()=>{cring.style.width='36px';cring.style.height='36px';cring.style.borderColor='rgba(0,212,255,.4)';});
-});
+  toast.textContent = '✓ ' + message;
+  toast.classList.add('on');
+  clearTimeout(showToast.timeoutId);
+  showToast.timeoutId = setTimeout(() => {
+    toast.classList.remove('on');
+  }, 2800);
+}
 
-// TYPING
-const tagline="Ensuring software quality through rigorous testing, agile methodologies, and data integrity checks.";
-let ti=0;
-function typeIt(){const el=document.getElementById('tt');if(el&&ti<tagline.length){el.textContent+=tagline[ti++];setTimeout(typeIt,34);}}
+function toggleMenu() {
+  const menu = document.getElementById('mobile-menu');
+  const button = document.querySelector('.mobile-menu-toggle');
 
-// PARTICLES
-function makeParticles(){
-  const c=document.getElementById('parts');
-  for(let i=0;i<30;i++){
-    const p=document.createElement('div');p.className='particle';
-    const s=Math.random()*4+2,h=Math.random()>.5?'196,100%,50%':'270,91%,65%';
-    p.style.cssText=`left:${Math.random()*100}%;width:${s}px;height:${s}px;background:hsl(${h});box-shadow:0 0 ${s*3}px hsl(${h});animation-duration:${9+Math.random()*12}s;animation-delay:${Math.random()*12}s;`;
-    c.appendChild(p);
+  if (!menu || !button) return;
+
+  const isOpen = menu.classList.toggle('open');
+  button.setAttribute('aria-expanded', String(isOpen));
+}
+
+function updateProgress() {
+  const bar = document.getElementById('scroll-progress-bar');
+  if (!bar) return;
+
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const width = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  bar.style.width = width + '%';
+}
+
+function setupStatusDropdown() {
+  const switcher = document.querySelector('.status-switcher');
+  const trigger = document.querySelector('.status-trigger');
+
+  if (!switcher || !trigger) return;
+
+  trigger.addEventListener('click', () => {
+    const isLearning = switcher.classList.toggle('learning');
+    const text = document.querySelector('.status-text');
+    if (text) text.textContent = isLearning ? 'Currently learning' : 'Open to Work';
+    trigger.setAttribute('aria-checked', String(isLearning));
+  });
+}
+
+function setupSkillsLightSwitch() {
+  const switcher = document.getElementById('skills-light-switch');
+  const skillsSection = document.getElementById('skills');
+  if (!switcher || !skillsSection) return;
+
+  switcher.addEventListener('click', () => {
+    const isLit = skillsSection.classList.toggle('skills-lit');
+    switcher.setAttribute('aria-checked', String(isLit));
+  });
+}
+
+function setupSolarSkills() {
+  const skillButtons = document.querySelectorAll('.orbit-skill');
+  const core = document.querySelector('.solar-core');
+
+  skillButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const target = button.dataset.target;
+      if (target) {
+        const skillCard = document.querySelector(target);
+        if (!skillCard) return;
+
+        document.querySelectorAll('.skill-card').forEach((card) => {
+          card.classList.remove('skill-highlight');
+        });
+        skillCard.classList.add('skill-highlight');
+        skillCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        clearTimeout(setupSolarSkills.highlightTimeout);
+        setupSolarSkills.highlightTimeout = setTimeout(() => {
+          skillCard.classList.remove('skill-highlight');
+        }, 1800);
+      }
+    });
+  });
+
+  if (core) {
+    core.addEventListener('click', () => {
+      document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
   }
 }
 
-// SCROLL REVEAL
-function initReveal(){
-  const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('vis');});},{threshold:.1});
-  document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+function setupNavState() {
+  const links = [...document.querySelectorAll('.nav-link')];
+  const sections = [...document.querySelectorAll('main section[id]')];
+
+  const setActive = () => {
+    const offset = window.scrollY + 120;
+    let activeId = sections[0]?.id || 'hero';
+
+    sections.forEach((section) => {
+      if (offset >= section.offsetTop) activeId = section.id;
+    });
+
+    links.forEach((link) => {
+      const isActive = link.getAttribute('href') === '#' + activeId;
+      link.classList.toggle('active', isActive);
+    });
+  };
+
+  setActive();
+  window.addEventListener('scroll', setActive, { passive: true });
 }
 
-// SKILL BARS
-function initBars(){
-  const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('on');});},{threshold:.25});
-  document.querySelectorAll('.sbf').forEach(b=>obs.observe(b));
+function setupCopyLinks() {
+  document.querySelectorAll('.copy-target, .social-button[data-copy]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      const value = link.dataset.copy || link.textContent.trim();
+      if (link.tagName === 'A' && link.href && link.href.startsWith('mailto:')) {
+        return;
+      }
+      event.preventDefault();
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(value)
+          .then(() => showToast('Copied to clipboard'))
+          .catch(() => showToast('Copy unavailable'));
+      } else {
+        showToast('Copy unavailable');
+      }
+    });
+  });
 }
 
-function boot(){makeParticles();typeIt();initReveal();initBars();}
+function handleContactSubmit(event) {
+  event.preventDefault();
 
-function toggleMenu(){document.getElementById('mmenu').classList.toggle('open');}
+  const name = document.getElementById('cfn')?.value.trim();
+  const email = document.getElementById('cfe')?.value.trim();
+  const message = document.getElementById('cfm')?.value.trim();
 
-function showToast(msg){const t=document.getElementById('toast');t.textContent='✓  '+msg;t.classList.add('on');setTimeout(()=>t.classList.remove('on'),3500);}
+  if (!name || !email || !message) {
+    showToast('Please fill all fields');
+    return;
+  }
 
-function sendMsg(){
-  const n=document.getElementById('cfn').value.trim();
-  const e=document.getElementById('cfe').value.trim();
-  const m=document.getElementById('cfm').value.trim();
-  if(!n||!e||!m){showToast('PLEASE FILL ALL FIELDS');return;}
-  showToast('MESSAGE TRANSMITTED SUCCESSFULLY');
-  ['cfn','cfe','cfm'].forEach(id=>document.getElementById(id).value='');
+  const subject = encodeURIComponent('Portfolio enquiry from ' + name);
+  const body = encodeURIComponent(
+    'Name: ' + name + '\n' +
+    'Email: ' + email + '\n\n' +
+    'Message:\n' + message
+  );
+
+  window.location.href = 'mailto:Keerthivarman780@gmail.com?subject=' + subject + '&body=' + body;
+  showToast('Message prepared');
+
+  event.target.reset();
 }
 
-// NAV ACTIVE
-const secs=document.querySelectorAll('section[id]');
-window.addEventListener('scroll',()=>{let cur='';secs.forEach(s=>{if(window.scrollY>=s.offsetTop-80)cur=s.id;});document.querySelectorAll('.nl').forEach(l=>{l.style.color=l.getAttribute('href')==='#'+cur?'var(--nb)':'';});});
+function attachEvents() {
+  const toggle = document.querySelector('.mobile-menu-toggle');
+  if (toggle) {
+    toggle.addEventListener('click', toggleMenu);
+  }
+
+  const mobileLinks = document.querySelectorAll('.mobile-menu .nav-link');
+  mobileLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      const menu = document.getElementById('mobile-menu');
+      if (menu) menu.classList.remove('open');
+      const button = document.querySelector('.mobile-menu-toggle');
+      if (button) button.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  const form = document.getElementById('contact-form');
+  if (form) form.addEventListener('submit', handleContactSubmit);
+
+  setupStatusDropdown();
+  setupSkillsLightSwitch();
+  setupSolarSkills();
+  setupCopyLinks();
+
+  document.querySelectorAll('.nav-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      document.querySelectorAll('.nav-link').forEach((item) => item.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+}
+
+window.addEventListener('scroll', updateProgress, { passive: true });
+window.addEventListener('load', () => {
+  updateProgress();
+  setupNavState();
+  attachEvents();
+});
